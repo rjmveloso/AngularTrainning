@@ -1,0 +1,51 @@
+Lance Finney
+https://github.com/angularbootcamp/abc
+https://bitbucket.org/od-training/abc-pt20190716/src/master
+https://update.angular.io
+
+http://reactivehow
+https://rxmarbles.com
+https://coryrylan.com
+youtube: ngHouston - Befinner BReactive programming with RxJS
+Randall Koutnik: Build Reactive Websites with RxJS
+
+
+lock file says exactly the version to use.
+For instance ~8.1.0 can get 8.1.x, but with the commit of lock file, will say which version was used at that time.
+If someone forces to ugrade, the lock file must me commited to say which exactly version was updated.
+
+gest alternative to jasmine.
+cypress alternative to protractor.
+array destructuring: https://dev.to/sarah_chima/destructuring-assignment---arrays-16f
+[1, 2, 3, 4] > [, var1, var2] => [2, 3] : ignores the first element and the rest of the array
+
+import { ... } from ... it's an import for a TypeScript
+
+@NgModule { imports: ... } it's to other angular modules
+@NgModules can export only some components within it
+
+BrowserModule should be loaded once and only once, in AppModule.
+Other modules should import CommonModule which is like a subset of BrowserModule.
+
+Routing should be extracted to a different angular module (app-routing.module.ts)
+Using loadChildren allows lazy loading
+preloadingStrategy: PreloadAllModules => after the page modules are loaded and rendered, load others on the background
+
+
+`Task ${this.todos.length + 1}` => string interpolation
+
+
+*ngFor="let e of (employeeData | async)" :
+ - employeeData: Observable<Employee[]>
+ - async automatically subscribe and unsubscribe the observable
+
+{...object} => shallow copy of an object
+{...object, title: 'xxx' } => override the title of the cloned object
+
+
+ReactiveForms:
+- [class.disabled]="!details.valid" em vez de "details.invalid" por existe um terceiro estado 'pending' que permite fazer async validators.
+
+debounceTime: Make use of it to prevent calls everytime user enters any text. Wait for an amount of time without entering anything.
+switchMap: Much like a mergeMap but can cancel the request (if the server allows it). Use it only for GET, not DELETE, POST, PUT.
+share: It's like a cache. No matter how many subscribers we only share the previous observable. Prevents multiple roundtrips to the server.

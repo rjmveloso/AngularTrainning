@@ -1,0 +1,8 @@
+<div *ngFor="let video of videos" [class.selected]="video.id === selected.id">
+    <app-video-list-item [video]="video" (click)="toggle(video)"></app-video-list-item>
+<!--
+    <a [routerLink]="" [queryParams]="{video: video.id}">
+        <app-video-list-item [video]="video"></app-video-list-item>
+    </a>
+-->
+</div>

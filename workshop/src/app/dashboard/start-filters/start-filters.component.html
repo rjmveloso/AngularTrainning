@@ -1,0 +1,10 @@
+<h5>Search Filters</h5>
+
+<section class="card">
+    <div class="card-content">
+        <form [formGroup]="filters" (ngSubmit)="submit()">
+            <label for="title">Title</label>
+            <input id="title" type="text" formControlName="title">
+        </form>
+    </div>
+</section>
